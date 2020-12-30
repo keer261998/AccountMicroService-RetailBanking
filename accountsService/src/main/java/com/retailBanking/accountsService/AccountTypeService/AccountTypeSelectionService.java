@@ -1,4 +1,4 @@
-package com.retailBanking.accountsService.accountTypeService;
+package com.retailBanking.accountsService.AccountTypeService;
 
 import java.util.List;
 

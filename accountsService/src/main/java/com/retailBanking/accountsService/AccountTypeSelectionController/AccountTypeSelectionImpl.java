@@ -1,4 +1,4 @@
-package com.retailBanking.accountsService.accountTypeSelectionController;
+package com.retailBanking.accountsService.AccountTypeSelectionController;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.retailBanking.accountsService.AccountTypeService.AccountTypeSelectionServiceImpl;
 import com.retailBanking.accountsService.Models.AccountsModel;
-import com.retailBanking.accountsService.accountTypeService.AccountTypeSelectionServiceImpl;
 
 @RestController
 public class AccountTypeSelectionImpl implements AccountTypeSelection{

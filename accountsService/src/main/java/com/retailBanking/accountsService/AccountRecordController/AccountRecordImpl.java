@@ -1,4 +1,4 @@
-package com.retailBanking.accountsService.accountRecordController;
+package com.retailBanking.accountsService.AccountRecordController;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.retailBanking.accountsService.AccountRecordService.AccountRecordService;
 import com.retailBanking.accountsService.BusinessLogic.First5Accounts;
 import com.retailBanking.accountsService.Models.AccountsModel;
 import com.retailBanking.accountsService.Models.CreditCardModel;
-import com.retailBanking.accountsService.accountRecordService.AccountRecordService;
 
 @RestController
 public class AccountRecordImpl implements AccountRecord {

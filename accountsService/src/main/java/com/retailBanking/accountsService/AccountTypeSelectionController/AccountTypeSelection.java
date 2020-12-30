@@ -1,4 +1,4 @@
-package com.retailBanking.accountsService.accountTypeSelectionController;
+package com.retailBanking.accountsService.AccountTypeSelectionController;
 
 import java.io.IOException;
 import java.util.List;

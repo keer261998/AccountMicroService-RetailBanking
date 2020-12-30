@@ -1,4 +1,4 @@
-package com.retailBanking.accountsService.accountRecordController;
+package com.retailBanking.accountsService.AccountRecordController;
 
 import java.util.List;
 
