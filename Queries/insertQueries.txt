@@ -1,0 +1,27 @@
+use account;
+
+INSERT INTO creditcard ( creditcardnumber,accountno,creditlimit ,availablelimit,paymentduedate, minimumpayment)
+VALUES (111222333444,444333222111,60000.0,30000,'2021-01-15', 2000.00 );
+INSERT INTO creditcard ( creditcardnumber,accountno,creditlimit ,availablelimit,paymentduedate, minimumpayment)
+VALUES (111222333555,555333222110,600000.0,300000,'2021-01-15', 20000.00 );
+
+INSERT INTO login (userid)
+VALUES (1);
+
+
+INSERT INTO accounts(userid,accountno,accounttype,accountbalance,accountnickname,creditcardnumber)
+VALUES (1, 444333222111,'savings',1000000.0,'SAV2111',111222333444 );
+INSERT INTO accounts(userid,accountno,accounttype,accountbalance,accountnickname,creditcardnumber)
+VALUES (1, 444333222222,'savings',2000000.0,'SAV2222',111222333555 );
+INSERT INTO accounts(userid,accountno,accounttype,accountbalance,accountnickname,creditcardnumber)
+VALUES (1, 444333222333,'savings',3000000.0,'SAV2333',111222333666 );
+INSERT INTO accounts(userid,accountno,accounttype,accountbalance,accountnickname,creditcardnumber)
+VALUES (1, 444333222444,'savings',900000.0,'SAV2444',111222333777 );
+INSERT INTO accounts(userid,accountno,accounttype,accountbalance,accountnickname,creditcardnumber)
+VALUES (1, 444333222555,'savings',11000000.0,'SAV2555',111222333888 );
+INSERT INTO accounts(userid,accountno,accounttype,accountbalance,accountnickname,creditcardnumber)
+VALUES (1, 444333222666,'savings',25000000.0,'SAV2666',111222333999 );
+INSERT INTO accounts(userid,accountno,accounttype,accountbalance,accountnickname,creditcardnumber)
+VALUES (1, 555333222110,'checking',1000000.0,'CHE2110',111222333555 );
+
+
