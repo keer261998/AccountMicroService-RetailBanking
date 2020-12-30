@@ -1,39 +1,39 @@
 package com.retailBanking.accountsService.Models;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "accounts")
-public class accountsModel {
+public class AccountsModel {
 
-	@Column(name="userid")
+	@Column(name = "userid")
 	private Double userid;
-
 
 	@Id
 	@Column(name = "accountno")
-	private Double accountNo;
-	
+	private BigInteger accountNo;
+
 	@Column(name = " accounttype")
 	private String accountType;
-	
-	@Column(name="accountnickname")
-	private String accountNickName;
-	
-	@Column(name="accountbalance")
-	private Double accountBalance;
 
-	public Double getAccountNo() {
+	@Column(name = "accountnickname")
+	private String accountNickName;
+
+	@Column(name = "accountbalance")
+	private BigInteger accountBalance;
+
+	public BigInteger getAccountNo() {
 		return accountNo;
 	}
 
-	public void setAccountNo(Double accountNo) {
+	public void setAccountNo(BigInteger accountNo) {
 		this.accountNo = accountNo;
 	}
 
@@ -53,45 +53,36 @@ public class accountsModel {
 		this.accountNickName = accountNickName;
 	}
 
-	public Double getAccountBalance() {
+	public BigInteger getAccountBalance() {
 		return accountBalance;
 	}
 
-	public void setAccountBalance(Double accountBalance) {
+	public void setAccountBalance(BigInteger accountBalance) {
 		this.accountBalance = accountBalance;
 	}
 
-	public accountsModel() {
+	public AccountsModel() {
 		super();
 	}
 
-	@OneToMany(targetEntity = creditCardModel.class, mappedBy = "accountNo")
-	private List<creditCardModel> cardModel;
+	/*
+	 * @OneToMany(targetEntity = CreditCardModel.class, mappedBy = "accountNo")
+	 * private List<CreditCardModel> cardModel;
+	 * 
+	 * public List<CreditCardModel> getCardModel() { return cardModel; }
+	 * 
+	 * public void setCardModel(List<CreditCardModel> cardModel) { this.cardModel =
+	 * cardModel; }
+	 */
 
-	public List<creditCardModel> getCardModel() {
-		return cardModel;
-	}
-
-	public void setCardModel(List<creditCardModel> cardModel) {
-		this.cardModel = cardModel;
-	}
-
-	public accountsModel(Double accountNo, String accountType, String accountNickName, Double accountBalance, List<creditCardModel> cardModel) {
+	public AccountsModel(BigInteger accountNo, String accountType, String accountNickName, BigInteger accountBalance,
+			List<CreditCardModel> cardModel) {
 		super();
 		this.accountNo = accountNo;
 		this.accountType = accountType;
 		this.accountNickName = accountNickName;
 		this.accountBalance = accountBalance;
-		this.cardModel = cardModel;
+		// this.cardModel = cardModel;
 	}
 
-	
-	
-	
-
-	
-	
-	
-	
-	
 }

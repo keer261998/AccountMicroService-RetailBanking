@@ -2,12 +2,12 @@ package com.retailBanking.accountsService.accountTypeService;
 
 import java.util.List;
 
-import com.retailBanking.accountsService.Models.accountsModel;
+import com.retailBanking.accountsService.Models.AccountsModel;
 
 public interface AccountTypeSelectionService {
 
 	
 	
-	List<accountsModel> getAccountType(String type);
+	List<AccountsModel> getAccountType(String type);
 
 }

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.retailBanking.accountsService.Models.accountsModel;
+import com.retailBanking.accountsService.Models.AccountsModel;
 import com.retailBanking.accountsService.accountTypeService.AccountTypeSelectionServiceImpl;
 
 @RestController
@@ -18,7 +18,7 @@ public class AccountTypeSelectionImpl implements AccountTypeSelection{
 
 	@Override
 	@GetMapping(value = "/accountType")
-	public List<accountsModel> getAccountType(@RequestParam(name = "type") String type){
+	public List<AccountsModel> getAccountType(@RequestParam(name = "type") String type){
 
 		
 		return	service.getAccountType(type);
