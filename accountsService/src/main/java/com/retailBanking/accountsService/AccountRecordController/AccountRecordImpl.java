@@ -3,17 +3,23 @@ package com.retailBanking.accountsService.AccountRecordController;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.retailBanking.accountsService.AccountRecordService.AccountRecordService;
+import com.retailBanking.accountsService.AccountTransactionController.AccountTransaction;
 import com.retailBanking.accountsService.BusinessLogic.First5Accounts;
 import com.retailBanking.accountsService.Models.AccountsModel;
 import com.retailBanking.accountsService.Models.CreditCardModel;
+import com.retailBanking.accountsService.Models.TransactionMicroServiceModel;
 
 @RestController
 public class AccountRecordImpl implements AccountRecord {
@@ -31,6 +37,19 @@ public class AccountRecordImpl implements AccountRecord {
 
 	@Autowired
 	First5Accounts firstFiveAccount;
+
+	@Autowired
+	AccountTransaction accountTransaction;
+	
+	
+	
+	@GetMapping("/accountsForHomePage")
+	public List<AccountsModel> getaccountsForHomePage(@RequestParam(name = "id") Double id) {
+		this.id = id;
+		this.type = "savings";
+		List<AccountsModel> getThreeAccounts =getAllAccountDetails(type, id).stream().limit(3).collect(Collectors.toList());
+		return getThreeAccounts;
+	}
 
 	@Override
 	@GetMapping("/defaultAccount")
@@ -84,5 +103,15 @@ public class AccountRecordImpl implements AccountRecord {
 		}
 		return creditCardData;
 	}
+
+	@PostMapping(value = "/getAccountTransactionData", produces = { MediaType.APPLICATION_JSON_VALUE })
+	public List<TransactionMicroServiceModel> getAccountTransactionData(@RequestParam("accNo") String accNo) {
+		accountNo = new BigInteger(accNo);
+
+		return accountTransaction.getTransactionByAccount(accountNo);
+
+	}
+	
+
 
 }

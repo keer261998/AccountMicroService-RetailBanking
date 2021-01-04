@@ -17,9 +17,11 @@ public class First5AccountsImpl implements First5Accounts  {
 		
 		for(int i=0;i<data.size()-1;i++)
 		{
+			if(i<5)
 			first5Accounts.add(data.get(i));
 			
 		}
+		
 		
 		return first5Accounts;
 		
