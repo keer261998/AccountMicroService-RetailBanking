@@ -2,7 +2,10 @@ package com.retailBanking.accountsService.AccountRecordController;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.retailBanking.accountsService.Models.AccountsModel;
+import com.retailBanking.accountsService.Models.Transaction;
 
 public interface AccountRecord {
 
@@ -15,5 +18,7 @@ public interface AccountRecord {
 	List<AccountsModel> getAccountDetailsByType();
 
 	List<AccountsModel> getAccountDetailsByAccountNo(String accNo);
+	
+	List<Transaction> getAccountTransactionData( String accNo);
 
 }

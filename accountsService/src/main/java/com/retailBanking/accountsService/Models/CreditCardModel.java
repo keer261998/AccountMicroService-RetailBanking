@@ -1,6 +1,6 @@
 package com.retailBanking.accountsService.Models;
 
-import java.math.BigInteger;
+
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -16,61 +16,61 @@ public class CreditCardModel {
 
 	@Id
 	@Column(name = "creditcardnumber")
-	private BigInteger creditCardNumber;
+	private long creditCardNumber;
 
 	@Column(name = "accountno")
-	private BigInteger accountNo;
+	private long accountNo;
 
 	@Column(name = "creditlimit")
-	private BigInteger creditLimit;
+	private long creditLimit;
 
 	@Column(name = " availablelimit")
-	private BigInteger avaliableLimit;
+	private long avaliableLimit;
 
 	@Column(name = "paymentduedate")
 	@JsonFormat(pattern = "dd-MM-yyyy")
 	private LocalDate paymentDueDate;
 
 	@Column(name = "minimumpayment")
-	private BigInteger minimumPayment;
+	private long minimumPayment;
 
-	public BigInteger getCreditCardNumber() {
+	public long getCreditCardNumber() {
 		return creditCardNumber;
 	}
 
-	public void setCreditCardNumber(BigInteger creditCardNumber) {
+	public void setCreditCardNumber(long creditCardNumber) {
 		this.creditCardNumber = creditCardNumber;
 	}
 
-	public BigInteger getAccountNo() {
+	public long getAccountNo() {
 		return accountNo;
 	}
 
-	public void setAccountNo(BigInteger accountNo) {
+	public void setAccountNo(long accountNo) {
 		this.accountNo = accountNo;
 	}
 
-	public BigInteger getCreditLimit() {
+	public long getCreditLimit() {
 		return creditLimit;
 	}
 
-	public void setCreditLimit(BigInteger creditLimit) {
+	public void setCreditLimit(long creditLimit) {
 		this.creditLimit = creditLimit;
 	}
 
-	public BigInteger getAvaliableLimit() {
+	public long getAvaliableLimit() {
 		return avaliableLimit;
 	}
 
-	public void setAvaliableLimit(BigInteger avaliableLimit) {
+	public void setAvaliableLimit(long avaliableLimit) {
 		this.avaliableLimit = avaliableLimit;
 	}
 
-	public BigInteger getMinimumPayment() {
+	public long getMinimumPayment() {
 		return minimumPayment;
 	}
 
-	public void setMinimumPayment(BigInteger minimumPayment) {
+	public void setMinimumPayment(long minimumPayment) {
 		this.minimumPayment = minimumPayment;
 	}
 
@@ -86,8 +86,8 @@ public class CreditCardModel {
 		super();
 	}
 
-	public CreditCardModel(BigInteger creditCardNumber, BigInteger accountNo, BigInteger creditLimit,
-			BigInteger avaliableLimit, LocalDate paymentDueDate, BigInteger minimumPayment) {
+	public CreditCardModel(long creditCardNumber, long accountNo, long creditLimit,
+			long avaliableLimit, LocalDate paymentDueDate, long minimumPayment) {
 		super();
 		this.creditCardNumber = creditCardNumber;
 		this.accountNo = accountNo;

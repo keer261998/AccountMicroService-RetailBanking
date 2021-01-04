@@ -1,23 +1,30 @@
 package com.retailBanking.accountsService.AccountTransactionController;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
-import org.springframework.stereotype.Controller;
+import com.retailBanking.accountsService.Models.Transaction;
+import com.retailBanking.accountsService.Repository.TransactionServiceProxy;
 
-import com.retailBanking.accountsService.Models.TransactionMicroServiceModel;
-import com.retailBanking.accountsService.TransactionService.TransactionService;
 
-@Controller
+@RestController
 public class AccountTransactionImpl implements AccountTransaction {
+	
 	@Autowired
-	TransactionService service;
+	TransactionServiceProxy service;
 
+	//@GetMapping("account/{account}")
 	@Override
-	public List<TransactionMicroServiceModel> getTransactionByAccount(BigInteger accNo) {
-		List<TransactionMicroServiceModel> transaction = service.getTransactionByAccount(accNo);
+	public List<Transaction> getTransactionByAccount(@PathVariable("account") long acc) {
+		
+		List<Transaction> transaction = service. getTransactionByAccount(acc);
+		System.out.println("output"+transaction);
 		return transaction;
 	}
 
