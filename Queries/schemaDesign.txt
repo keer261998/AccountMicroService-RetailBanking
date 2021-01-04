@@ -1,0 +1,35 @@
+create database account;
+use account;
+
+CREATE TABLE creditcard(
+     creditcardnumber bigint,
+     accountno bigint references accounts(accountno),
+    creditlimit bigint,
+    availablelimit bigint,
+    paymentduedate date,
+    minimumpayment bigint,
+   PRIMARY KEY(creditcardnumber)
+);
+
+CREATE TABLE login(
+	 userid Double,
+	PRIMARY KEY(userid)
+);
+
+
+
+
+CREATE TABLE accounts(
+    userid double references login(userid),
+   accountno bigint,
+   accounttype varchar(999),
+  accountbalance bigint,
+  accountnickname varchar(999),
+   creditcardnumber bigint references creditcard(creditcardnumber),
+   PRIMARY KEY(accountno)
+);
+
+
+
+
+
